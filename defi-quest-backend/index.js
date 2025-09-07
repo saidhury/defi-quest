@@ -6,9 +6,10 @@ const offChainQuestData = require("./data/quests.json");
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 
 // --- Middleware ---
-const whitelist = ['http://localhost:5173', 'https://your-frontend-url.vercel.app'];
+const whitelist = [FRONTEND_URL];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
