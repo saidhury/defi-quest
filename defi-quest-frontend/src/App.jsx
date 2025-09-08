@@ -1,20 +1,23 @@
+// src/App.jsx - FINAL, ROBUST VERSION
+
 import { useState, useEffect } from 'react';
 import { Routes, Route, Outlet, useNavigate } from 'react-router-dom';
 import { ethers } from 'ethers';
 
 // Components & Pages
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'; 
+import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import ProtectedRoute from './components/ProtectedRoute';
 import Dashboard from './components/Dashboard';
 import QuestHub from './pages/QuestHub';
 import QuestDetail from './pages/QuestDetail';
+import QuestActionPage from './pages/QuestActionPage';
 import Leaderboard from './pages/Leaderboard';
 import Profile from './pages/Profile';
-import About from './pages/About';    
-import Partners from './pages/Partners'; 
+import About from './pages/About';
+import Partners from './pages/Partners';
 
 import './App.css';
 
@@ -30,6 +33,25 @@ function App() {
   const [account, setAccount] = useState(null);
   const navigate = useNavigate();
 
+  // --- NEW useEffect FOR EAGER CONNECTION ---
+  useEffect(() => {
+    const checkIfWalletIsConnected = async () => {
+      if (window.ethereum) {
+        try {
+          // Check for accounts without prompting the user
+          const provider = new ethers.BrowserProvider(window.ethereum);
+          const accounts = await provider.listAccounts();
+          if (accounts.length > 0) {
+            setAccount(accounts[0].address); // Use the first account found
+          }
+        } catch (error) {
+          console.error("Error checking for connected wallet:", error);
+        }
+      }
+    };
+    checkIfWalletIsConnected();
+  }, []); // Empty array means this runs once on initial load
+
   const handleConnect = async () => {
     if (window.ethereum) {
       try {
@@ -37,7 +59,7 @@ function App() {
         const accounts = await provider.send("eth_requestAccounts", []);
         if (accounts.length > 0) {
           setAccount(accounts[0]);
-          return true; 
+          return true;
         }
       } catch (error) {
         console.error("Error connecting to MetaMask:", error);
@@ -52,7 +74,7 @@ function App() {
     const handleAccountsChanged = (accounts) => {
       if (accounts.length === 0) {
         setAccount(null);
-        navigate('/login'); 
+        navigate('/login');
       } else {
         setAccount(accounts[0]);
       }
@@ -67,8 +89,7 @@ function App() {
     };
   }, [navigate]);
 
-
-   return (
+  return (
     <div className="App">
       <Navbar account={account} />
       <main>
@@ -77,13 +98,14 @@ function App() {
           <Route path="/login" element={<LoginPage handleConnect={handleConnect} />} />
           <Route path="/leaderboard" element={<Leaderboard />} />
           <Route path="/profile" element={<Profile />} />
-          <Route path="/about" element={<About />} />       {/* <-- Add new route */}
-          <Route path="/partners" element={<Partners />} />   {/* <-- Add new route */}
+          <Route path="/about" element={<About />} />
+          <Route path="/partners" element={<Partners />} />
 
           <Route element={<ProtectedRoute account={account} />}>
             <Route path="/app" element={<AppLayout account={account} />}>
               <Route path="quests" element={<QuestHub />} />
               <Route path="quest/:questId" element={<QuestDetail />} />
+              <Route path="quest/:questId/action" element={<QuestActionPage />} />
             </Route>
           </Route>
         </Routes>

@@ -720,3 +720,65 @@ hr {
     justify-content: center; 
   }
 }
+
+.quest-action-page {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.action-container {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.action-container h3 {
+  margin-top: 0;
+  color: var(--primary-color);
+}
+
+.action-input {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1.5rem 0;
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  color: var(--text-primary);
+  font-size: 1.1em;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+.action-buttons button {
+  flex-grow: 1;
+}
+
+/* --- Styles for QuestDetail page flow --- */
+.interaction-flow {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.action-link-button {
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.action-link-button:hover {
+  background-color: var(--primary-hover);
+  transform: translateY(-2px);
+}

@@ -1,66 +1,48 @@
 [
   {
     "id": 1,
-    "title": "Your First Swap",
-    "description": "Learn the fundamentals of decentralized finance by swapping one token for another on a leading Decentralized Exchange (DEX).",
-    "learningObjective": "Understand how to use a DEX to trade assets without a centralized intermediary and how to manage gas fees.",
+    "title": "Your First Stake",
+    "description": "Learn how Proof-of-Stake networks are secured by staking tokens in a protocol. Earn yield on your assets by participating in network security.",
+    "learningObjective": "Understand the concept of staking, how it provides security, and how users are rewarded for locking their tokens.",
     "difficulty": "Easy",
-    "icon": "swap-icon",
     "rewardDetails": {
       "type": "QP",
-      "amount": 100,
-      "description": "100 Quest Points"
+      "amount": 150,
+      "description": "150 Quest Points"
     },
     "tutorialSteps": [
-      "Go to the designated DEX partner platform.",
-      "Connect your Web3 wallet (e.g., MetaMask).",
-      "Select 'Quest Token A' (QTA) as the token you want to swap from.",
-      "Select 'Quest Token B' (QTB) as the token you wish to receive.",
-      "Enter an amount to swap and click the 'Swap' button.",
-      "Your wallet will prompt you to confirm the transaction. Review the gas fees and confirm.",
-      "Once the transaction is confirmed on the blockchain, come back here and click 'Verify Completion'!"
-    ]
+      "Click the 'Perform Action' button below to go to the staking interface.",
+      "First, you need some QP tokens to stake. If you don't have any, a demo amount will be provided.",
+      "In the staking interface, enter an amount and click 'Approve'. Your wallet will ask for confirmation.",
+      "Once approved, click 'Stake'. Confirm the final transaction in your wallet.",
+      "Your tokens are now staked! Return to this page and click 'Verify Completion'."
+    ],
+    "actionConfig": {
+      "targetContractAddress": "0x4aa143Ba69e3521f3A8a46C381d96AdF36d4f951",
+      "tokenToApproveAddress": "0xd1B731102AC1aba43C29443f67ea0f72C10b983D"
+    }
   },
   {
     "id": 2,
-    "title": "Become a Liquidity Provider",
-    "description": "Discover how to earn passive income by providing liquidity to a token pair in a liquidity pool.",
-    "learningObjective": "Learn the concept of liquidity pools, impermanent loss, and how to stake LP tokens to earn trading fees.",
+    "title": "Mint a Stablecoin",
+    "description": "Discover the world of decentralized stablecoins by depositing a volatile asset as collateral to mint a new token pegged to the US Dollar.",
+    "learningObjective": "Learn about collateralized debt positions (CDPs), over-collateralization, and how stablecoins maintain their peg.",
     "difficulty": "Medium",
-    "icon": "pool-icon",
     "rewardDetails": {
       "type": "NFT_BADGE",
-      "name": "Liquidity Master Badge",
-      "imageUrl": "ipfs://bafkreiemv4h2r6t2fgrz64f333jsmsx62lqfaq2xrk476ggytq27l2spsu"
+      "name": "Stablecoin Architect Badge",
+      "imageUrl": "ipfs://bafkreifh4qjalk2jhgtpfq4a7n2a47j4xfev3j7dbcbx3vj4gjvo2oundu"
     },
     "tutorialSteps": [
-      "Navigate to the 'Pool' section of the partner DEX.",
-      "Select the QTA/QTB token pair.",
-      "Deposit an equal value of both QTA and QTB into the pool.",
-      "Approve the DEX to spend your tokens by signing the transaction in your wallet.",
-      "Confirm the final transaction to add your liquidity. You will receive LP (Liquidity Provider) tokens in return.",
-      "Return to DeFiQuest and verify your completion to claim your exclusive NFT badge."
-    ]
-  },
-  {
-    "id": 3,
-    "title": "Stake Your Tokens",
-    "description": "Learn about network security and earning rewards by staking tokens in a protocol's staking contract.",
-    "learningObjective": "Understand the role of staking in Proof-of-Stake networks and DeFi protocols, and the concept of earning yield on your assets.",
-    "difficulty": "Medium",
-    "icon": "stake-icon",
-    "rewardDetails": {
-      "type": "QP",
-      "amount": 250,
-      "description": "250 Quest Points"
-    },
-    "tutorialSteps": [
-      "Go to the staking page of our partner protocol.",
-      "Connect your wallet.",
-      "Choose the amount of 'Governance Token' (GOV) you wish to stake.",
-      "Click 'Stake' and approve the transaction in your wallet.",
-      "Once staked, your tokens are locked in the contract and will begin earning rewards.",
-      "Come back here to verify your on-chain action and receive your Quest Points."
-    ]
+      "Click the 'Perform Action' button below to go to the minting vault.",
+      "To mint, you must first deposit a collateral token (CTK). A demo amount will be provided.",
+      "In the vault interface, enter an amount of CTK to deposit and click 'Approve'.",
+      "Once approved, click 'Deposit & Mint'. Confirm the final transaction in your wallet.",
+      "You will receive a corresponding amount of dUSD! Return to this page and click 'Verify Completion'."
+    ],
+    "actionConfig": {
+      "targetContractAddress": "0xfb51f8E9C5B9F5E73F5883042d0B72bA29823800",
+      "tokenToApproveAddress": "0x2C5274b7351cec6d1B2cb9CA1351B8767A113f5C"
+    }
   }
 ]

@@ -1,4 +1,5 @@
 // index.js
+require('dotenv').config(); 
 const express = require("express");
 const cors = require("cors");
 const blockchainService = require("./services/blockchainService");
@@ -9,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 
 // --- Middleware ---
-const whitelist = [FRONTEND_URL];
+const whitelist = [FRONTEND_URL, "http://localhost:5173"];
 const corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1 || !origin) {
@@ -50,6 +51,19 @@ app.get("/user/:address/progress", async (req, res) => {
     const progress = await blockchainService.getUserProgress(address);
     res.json(progress);
 });
+
+
+app.post("/user/update-progress", (req, res) => {
+  const { userAddress, questId } = req.body;
+
+  if (!userAddress || !questId) {
+    return res.status(400).json({ error: "userAddress and questId are required." });
+  }
+
+  const updatedProgress = blockchainService.updateUserProgress(userAddress, questId);
+  res.json(updatedProgress);
+});
+
 
 // --- Server Initialization ---
 

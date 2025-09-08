@@ -21,7 +21,7 @@ const Navbar = ({ account }) => {
         </div>
         <div className="nav-wallet">
           {account ? (
-            <div className="account-display">{/*...*/}</div>
+            <div className="account-display">{`${account.slice(0, 6)}...${account.slice(-4)}`}</div>
           ) : (
             <Link to="/login" className="connect-button">
               Launch App
