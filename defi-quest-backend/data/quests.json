@@ -4,6 +4,20 @@
     "title": "Your First Stake",
     "description": "Learn how Proof-of-Stake networks are secured by staking tokens in a protocol. Earn yield on your assets by participating in network security.",
     "learningObjective": "Understand the concept of staking, how it provides security, and how users are rewarded for locking their tokens.",
+    "keyConcepts": [
+      {
+        "term": "Proof-of-Stake (PoS)",
+        "definition": "A security model where validators lock up (stake) their tokens for the chance to validate transactions and earn rewards. It's an energy-efficient alternative to Proof-of-Work mining."
+      },
+      {
+        "term": "Staking Yield (APY)",
+        "definition": "The reward earned for staking, often expressed as an Annual Percentage Yield (APY). It's compensation for helping to secure the network with your capital."
+      },
+      {
+        "term": "Approve Transaction",
+        "definition": "A required first step that gives a smart contract permission to interact with a specific token in your wallet. You are granting access, not sending funds."
+      }
+    ],
     "difficulty": "Easy",
     "rewardDetails": {
       "type": "QP",
@@ -18,31 +32,8 @@
       "Your tokens are now staked! Return to this page and click 'Verify Completion'."
     ],
     "actionConfig": {
-      "targetContractAddress": "0x4aa143Ba69e3521f3A8a46C381d96AdF36d4f951",
-      "tokenToApproveAddress": "0xd1B731102AC1aba43C29443f67ea0f72C10b983D"
-    }
-  },
-  {
-    "id": 2,
-    "title": "Mint a Stablecoin",
-    "description": "Discover the world of decentralized stablecoins by depositing a volatile asset as collateral to mint a new token pegged to the US Dollar.",
-    "learningObjective": "Learn about collateralized debt positions (CDPs), over-collateralization, and how stablecoins maintain their peg.",
-    "difficulty": "Medium",
-    "rewardDetails": {
-      "type": "NFT_BADGE",
-      "name": "Stablecoin Architect Badge",
-      "imageUrl": "ipfs://bafkreifh4qjalk2jhgtpfq4a7n2a47j4xfev3j7dbcbx3vj4gjvo2oundu"
-    },
-    "tutorialSteps": [
-      "Click the 'Perform Action' button below to go to the minting vault.",
-      "To mint, you must first deposit a collateral token (CTK). A demo amount will be provided.",
-      "In the vault interface, enter an amount of CTK to deposit and click 'Approve'.",
-      "Once approved, click 'Deposit & Mint'. Confirm the final transaction in your wallet.",
-      "You will receive a corresponding amount of dUSD! Return to this page and click 'Verify Completion'."
-    ],
-    "actionConfig": {
-      "targetContractAddress": "0xfb51f8E9C5B9F5E73F5883042d0B72bA29823800",
-      "tokenToApproveAddress": "0x2C5274b7351cec6d1B2cb9CA1351B8767A113f5C"
+      "targetContractAddress": "0x578d126C789039E2298aCF34eF748745ff922a9D",
+      "tokenToApproveAddress": "0x16a5D9947723b980fB3B684C498DfB2dD4793AA2"
     }
   }
 ]
